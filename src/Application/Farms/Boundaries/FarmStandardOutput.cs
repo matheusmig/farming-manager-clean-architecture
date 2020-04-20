@@ -3,9 +3,9 @@ using Domain.Farms.Entities;
 
 namespace Application.Farms.Boundaries
 {
-    public class FarmUseCaseOutput : IUseCaseOutput
+    public class FarmStandardOutput
     {
-        public FarmUseCaseOutput(IFarm farm)
+        public FarmStandardOutput(IFarm farm)
         {
 
             Farm = farm;

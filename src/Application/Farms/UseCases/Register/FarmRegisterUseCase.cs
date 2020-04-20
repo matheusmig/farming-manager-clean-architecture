@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Application.Farms.UseCases.RegisterFarm
 {
-    public class RegisterFarmUseCase : IRegisterFarmUseCase
+    public class FarmRegisterUseCase : IFarmRegisterUseCase
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IRegisterFarmOutputPort _outputPort;
+        private readonly IFarmRegisterOutputPort _outputPort;
         private readonly IFarmService _farmService;
 
-        public RegisterFarmUseCase(IUnitOfWork unitOfWork,
-            IRegisterFarmOutputPort outputPort,
+        public FarmRegisterUseCase(IUnitOfWork unitOfWork,
+            IFarmRegisterOutputPort outputPort,
             IFarmService farmService)
         {
             _unitOfWork = unitOfWork;
@@ -22,7 +22,7 @@ namespace Application.Farms.UseCases.RegisterFarm
             _farmService = farmService;
         }
 
-        public async Task ExecuteAsync(RegisterFarmInput input)
+        public async Task ExecuteAsync(FarmRegisterInput input)
         {
             if (await _farmService.IsRegisteredAsync(input.Name))
             {
@@ -41,7 +41,7 @@ namespace Application.Farms.UseCases.RegisterFarm
 
         private void BuildOutput(IFarm farm)
         {
-            _outputPort.Standard(new FarmUseCaseOutput(
+            _outputPort.Standard(new FarmStandardOutput(
                 farm)
             );
         }

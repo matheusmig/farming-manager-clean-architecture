@@ -15,4 +15,16 @@ namespace Application.Base.Boundaries
         /// <returns>Task.</returns>
         Task ExecuteAsync(TUseCaseInput input);
     }
+
+    /// <summary>
+    /// Use Case parameterless.
+    /// </summary>
+    public interface IUseCase
+    {
+        /// <summary>
+        /// Executes the Use Case.
+        /// </summary>
+        /// <returns>Task.</returns>
+        Task ExecuteAsync();
+    }
 }

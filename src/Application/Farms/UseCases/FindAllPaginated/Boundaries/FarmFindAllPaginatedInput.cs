@@ -3,7 +3,7 @@ using Domain.Farms.ValueObjects;
 
 namespace Application.Farms.UseCases.RegisterFarm.Boundaries
 {
-    public sealed class FarmFindAllPaginatedInput : IUseCaseInput
+    public sealed class FarmFindAllPaginatedInput
     {
         public FarmFindAllPaginatedInput(int top, int skip)
         {

@@ -3,7 +3,7 @@ using Application.Farms.UseCases.RegisterFarm.Boundaries;
 
 namespace Application.Farms.UseCases.RegisterFarm
 {
-    public interface IRegisterFarmUseCase : IUseCase<RegisterFarmInput>
+    public interface IFarmRegisterUseCase : IUseCase<FarmRegisterInput>
     {
     }
 }

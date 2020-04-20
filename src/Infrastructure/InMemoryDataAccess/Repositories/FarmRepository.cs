@@ -45,6 +45,16 @@ namespace Infrastructure.InMemoryDataAccess.Repositories
                 .ConfigureAwait(false);
         }
 
+        public async Task<IFarm> GetGreatestAsync()
+        {
+            var farm = _context.Farms
+                .OrderByDescending(x => x.Area)
+                .FirstOrDefault();
+
+            return await Task.FromResult(farm)
+                .ConfigureAwait(false);
+        }
+
         public async Task<IEnumerable<IFarm>> FindAllPaginatedAsync(int top, int skip)
         {
             var farms = _context.Farms

@@ -3,7 +3,7 @@ using Application.Farms.Boundaries;
 
 namespace Application.Farms.UseCases.RegisterFarm.Boundaries
 {
-    public interface IRegisterFarmOutputPort : IOutputPortStandard<FarmUseCaseOutput>
+    public interface IFarmRegisterOutputPort : IOutputPortStandard<FarmStandardOutput>
     {
         void FarmAlreadyRegistered(string message);
     }

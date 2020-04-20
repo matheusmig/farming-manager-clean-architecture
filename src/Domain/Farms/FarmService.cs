@@ -17,6 +17,11 @@ namespace Domain.Farms
             _farmRepository = farmRepository;
         }
 
+        public async Task<IFarm> GetGreatestFarm()
+        {
+            return await _farmRepository.GetGreatestAsync();
+        }
+
         public async Task<IFarm> RegisterFarmAsync(string name, PositiveDecimal area, InscricaoEstadual inscricaoEstadual)
         {
             var newFarm = _farmFactory.NewFarm(name, area, inscricaoEstadual);

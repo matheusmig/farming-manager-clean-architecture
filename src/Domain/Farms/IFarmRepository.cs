@@ -8,6 +8,7 @@ namespace Domain.Farms
     {
         Task<IFarm> GetByAsync(long id);
         Task<IFarm> GetByAsync(string name);
+        Task<IFarm> GetGreatestAsync();
         Task<IEnumerable<IFarm>> FindAllPaginatedAsync(int top, int skip);
         Task<long> CountAllAsync();
         Task AddAsync(IFarm farm);

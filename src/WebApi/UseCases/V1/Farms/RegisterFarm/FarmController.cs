@@ -13,11 +13,11 @@ namespace WebApi.UseCases.V1.Farms.RegisterFarm
     [ApiController]
     public class FarmController : ControllerBase
     {
-        private readonly IRegisterFarmUseCase _useCase;
+        private readonly IFarmRegisterUseCase _useCase;
         private readonly RegisterFarmPresenter _presenter;
 
         public FarmController(
-           IRegisterFarmUseCase useCase,
+           IFarmRegisterUseCase useCase,
            RegisterFarmPresenter presenter)
         {
             _useCase = useCase;
@@ -38,7 +38,7 @@ namespace WebApi.UseCases.V1.Farms.RegisterFarm
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> PostAsync([FromBody][Required] RegisterFarmRequest request)
         {
-            var input = new RegisterFarmInput(request.Name,
+            var input = new FarmRegisterInput(request.Name,
                 new PositiveDecimal(request.Area),
                 new InscricaoEstadual(request.InscricaoEstadualState, request.InscricaoEstadualNumber));
 

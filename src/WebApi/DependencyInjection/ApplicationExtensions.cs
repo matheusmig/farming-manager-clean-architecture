@@ -16,7 +16,7 @@
         /// <returns>The modified instance.</returns>
         public static IServiceCollection AddUseCases(this IServiceCollection services)
         {
-            services.AddScoped<IRegisterFarmUseCase, RegisterFarmUseCase>();
+            services.AddScoped<IFarmRegisterUseCase, FarmRegisterUseCase>();
             services.AddScoped<IFarmFindAllPaginatedUseCase, FarmFindAllPaginatedUseCase>();
 
             services.AddScoped<IFarmService, FarmService>();

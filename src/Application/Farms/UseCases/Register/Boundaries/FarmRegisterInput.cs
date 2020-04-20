@@ -3,9 +3,9 @@ using Domain.Farms.ValueObjects;
 
 namespace Application.Farms.UseCases.RegisterFarm.Boundaries
 {
-    public sealed class RegisterFarmInput : IUseCaseInput
+    public sealed class FarmRegisterInput
     {
-        public RegisterFarmInput(string name, PositiveDecimal area, InscricaoEstadual inscricaoEstadual)
+        public FarmRegisterInput(string name, PositiveDecimal area, InscricaoEstadual inscricaoEstadual)
         {
             Name = name;
             Area = area;

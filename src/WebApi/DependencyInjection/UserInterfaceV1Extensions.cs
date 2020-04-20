@@ -9,7 +9,7 @@
         public static IServiceCollection AddPresentersV1(this IServiceCollection services)
         {
             services.AddScoped<RegisterFarmPresenter>();
-            services.AddScoped<IRegisterFarmOutputPort>(x => x.GetRequiredService<RegisterFarmPresenter>());
+            services.AddScoped<IFarmRegisterOutputPort>(x => x.GetRequiredService<RegisterFarmPresenter>());
 
             services.AddScoped<FarmFindAllPaginatedPresenter>();
             services.AddScoped<IFarmFindAllPaginatedOutputPort>(x => x.GetRequiredService<FarmFindAllPaginatedPresenter>());
